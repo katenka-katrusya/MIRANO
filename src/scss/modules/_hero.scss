@@ -1,0 +1,59 @@
+@use "../vars" as *;
+
+.hero {
+  padding: 60px 0;
+
+  &__head-group {
+    margin-bottom: 24px;
+    font-family: $second-family;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: clamp(
+      80px,
+      calc(80px + (40 * (100vw - 1024px) / (1440 - 1024))),
+      120px);
+    // можно сделать проще и менять на медиа запросах
+    //font-size: clamp(80px, 8vw, 120px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    color: $green;
+  }
+
+  &__subtitle {
+    font-style: italic;
+    //font-size: 40px;
+    font-size: clamp(
+      32px,
+      calc(32px + (8 * (100vw - 1024px) / (1440 - 1024))),
+      40px);
+    text-align: right;
+    color: $dark;
+  }
+
+  &__group-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: calc(284 / 1300 * 100%);
+
+    &_left {
+      border-radius: 400px 400px 400px 0;
+    }
+
+    &_center {
+      width: calc(680 / 1300 * 100%);
+    }
+
+    &_right {
+      border-radius: 400px 0px 400px 400px;
+    }
+  }
+}
