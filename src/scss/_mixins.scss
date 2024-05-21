@@ -1,0 +1,22 @@
+@use "vars" as *;
+
+@mixin dynamicFontSize($minFontSize, $maxFontSize, $minScreen, $maxScreen) {
+  font-size: clamp(
+    #{$minFontSize}px,
+    calc(#{$minFontSize}px + (($maxFontSize - $minFontSize) * (100vw - #{$minScreen}px) / ($maxScreen - $minScreen))),
+    #{$maxFontSize}px);
+}
+
+@mixin dynamicWidthImage($widthImage, $widthContainer) {
+  width: calc(#{$widthImage} / #{$widthContainer} * 100%);
+}
+
+%sectionTitle {
+  font-family: $second-family;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  color: $green;
+}

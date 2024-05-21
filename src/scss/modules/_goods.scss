@@ -1,0 +1,18 @@
+@use "../vars" as *;
+@use "../mixins" as *;
+
+.goods {
+  padding: 60px 0;
+
+  &__title {
+    @extend %sectionTitle;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 310px);
+    justify-content: center;
+    gap: 24px 20px;
+  }
+}

@@ -1,0 +1,79 @@
+@use "../vars" as *;
+
+.filter {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__group {
+    display: flex;
+    border: none;
+    padding: 0;
+    margin: 0;
+    gap: 12px;
+  }
+
+  &__choices {
+    gap: 64px;
+  }
+
+  &__radio {
+    position: absolute;
+    appearance: none;
+  }
+
+  &__label {
+    padding: 16px;
+    padding-left: 60px;
+    border-radius: 300px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: left 16px center;
+    background-color: $white;
+    color: $dark;
+
+    &_flowers {
+      background-image: url("/img/filter/flowers.png");
+    }
+
+    &_toy {
+      background-image: url("/img/filter/toy.png");
+    }
+
+    &_postcard {
+      background-image: url("/img/filter/postcard.png");
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $orange;
+      }
+    }
+  }
+
+  &__radio:focus-visible + &__label {
+    outline: 2px solid $orange;
+    outline-offset: 5px;
+  }
+
+  &__radio:checked + &__label {
+    background-color: $light-orange;
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: url("/img/filter/arrow.svg") no-repeat center / contain;
+    }
+  }
+}

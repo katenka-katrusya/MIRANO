@@ -51,16 +51,155 @@
                  aria-label="букет цветов в белой вазе из нежных розовых роз, хризантем и зелёных листьев"
                  xmlns="http://www.w3.org/2000/svg"
                  id="hero-img" width="680" height="588"
-                 viewBox="0 0 680 588"
-                  fill="currentColor">
+                 viewBox="0 0 680 588" fill="currentColor" preserveAspectRatio="xMidYMid slice">
               <clipPath id="hero">
                 <path d="M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z"/>
               </clipPath>
-              <image width="100%" height="100%" xlink:href="/img/hero/hero.jpg" clip-path="url(#hero)" />
+              <image width="100%" height="100%" xlink:href="/img/hero/hero.jpg" clip-path="url(#hero)" preserveAspectRatio="xMidYMid slice"/>
             </svg>
+<!--            <img class="hero__image hero__image_center" src="/img/hero/hero.jpg" alt="">-->
             <img class="hero__image hero__image_right" src="/img/hero/hero-right.jpg"
                  alt="букет цветов в круглой светлой коробке">
           </figure>
+        </div>
+      </section>
+      
+      <section class="filter">
+        <div class="container filter__container">
+          <h2 class="visually-hidden"></h2>
+          <fieldset class="filter__group">
+            <input class="filter__radio" type="radio" name="type" value="flower" id="flower" checked>
+            <label class="filter__label filter__label_flowers" for="flower">Цветы</label>
+            <input class="filter__radio" type="radio" name="type" value="toys" id="toys">
+            <label class="filter__label filter__label_toy" for="toys">Игрушки</label>
+            <input class="filter__radio" type="radio" name="type" value="postcard" id="postcard">
+            <label class="filter__label filter__label_postcard" for="postcard">Открытки</label>
+          </fieldset>
+          
+          <fieldset class="filter__group filter__group_choices">
+            <div class="filter__choices choices">
+             <button class="filter__select choices__btn">Цена</button>
+              <div class="choices__box">
+                <fieldset class="filter__group filter__group_price">
+                  <label>
+                    <input class="filter__input-price" type="text" placeholder="от">
+                  </label>
+                  <label>
+                    <input class="filter__input-price" type="text" placeholder="до">
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+            
+            <div class="filter__choices choices">
+              <button class="filter__select choices__btn">Тип товара</button>
+                <div class="choices__box">
+                  <ul class="filter__type-list">
+                    <li class="filter__type-item">
+                      <button class="filter__type-button">Монобукеты</button>
+                    </li>
+                    <li class="filter__type-item">
+                      <button class="filter__type-button">Авторские букеты</button>
+                    </li>
+                    <li class="filter__type-item">
+                      <button class="filter__type-button">Цветы в коробке</button>
+                    </li>
+                    <li class="filter__type-item">
+                      <button class="filter__type-button">Цветы в корзине</button>
+                    </li>
+                    <li class="filter__type-item">
+                      <button class="filter__type-button">Букеты из сухоцветов</button>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+      
+      <section class="goods">
+        <div class="container goods__container">
+          <h2 class="goods__title">Цветы</h2>
+          <ul class="goods__list">
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img class="card__image" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">
+                <div class="card__content">
+                  <h3 class="card__title">Авторский букет из роз, диантусов и сухоцветов</h3>
+                  <p class="card__date-delivery">сегодня в 14:00</p>
+                  <button class="card__button">
+                    <span class="card__price">3000 ₽</span>
+                    <span class="card__button-text">в корзину</span>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img class="card__image" src="/img/goods/02.jpg" alt="Авторский букет из роз, герберов, диантусов и сухоцветов">
+                <div class="card__content">
+                  <h3 class="card__title">Авторский букет из роз, герберов, диантусов и сухоцветов</h3>
+                  <p class="card__date-delivery">сегодня в 14:00</p>
+                  <button class="card__button">
+                    <span class="card__price">2000 ₽</span>
+                    <span class="card__button-text">в корзину</span>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img class="card__image" src="/img/goods/03.jpg" alt="Авторский букет из роз и сухоцветов">
+                <div class="card__content">
+                  <h3 class="card__title">Авторский букет из роз и сухоцветов</h3>
+                  <p class="card__date-delivery">сегодня в 14:00</p>
+                  <button class="card__button">
+                    <span class="card__price">2200 ₽</span>
+                    <span class="card__button-text">в корзину</span>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img class="card__image" src="/img/goods/04.jpg" alt="Монобукет из тюльпан">
+                <div class="card__content">
+                  <h3 class="card__title">Монобукет из тюльпан</h3>
+                  <p class="card__date-delivery">сегодня в 14:00</p>
+                  <button class="card__button">
+                    <span class="card__price">1600 ₽</span>
+                    <span class="card__button-text">в корзину</span>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img class="card__image" src="/img/goods/05.jpg" alt="Авторский букет из роз и диантусов">
+                <div class="card__content">
+                  <h3 class="card__title">Авторский букет из роз и диантусов</h3>
+                  <p class="card__date-delivery">сегодня в 14:00</p>
+                  <button class="card__button">
+                    <span class="card__price">2700 ₽</span>
+                    <span class="card__button-text">в корзину</span>
+                  </button>
+                </div>
+              </article>
+            </li>
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img class="card__image" src="/img/goods/06.jpg" alt="Монобукет из сухоцветов">
+                <div class="card__content">
+                  <h3 class="card__title">Монобукет из сухоцветов</h3>
+                  <p class="card__date-delivery">сегодня в 14:00</p>
+                  <button class="card__button">
+                    <span class="card__price">1500 ₽</span>
+                    <span class="card__button-text">в корзину</span>
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
