@@ -1,0 +1,171 @@
+@use "../vars" as *;
+@use "../mixins" as *;
+
+.cart {
+  display: none;
+  align-self: start;
+  padding-top: 100px;
+
+  &_open {
+    display: flex;
+  }
+
+  @media (max-width: 1360px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  @include mobile {
+    height: auto;
+    right: 14px;
+  }
+
+  &__container {
+    flex-direction: column;
+    padding: 24px 16px;
+    max-width: 310px;
+    min-height: 778px;
+    border-radius: 32px;
+    background-color: $white;
+
+    //@media (max-width: 1360px) {
+    //  height: 100%;
+    //}
+
+    @include mobile {
+      min-height: auto;
+      max-width: 292px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  &__date-delivery {
+    padding-left: 20px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    background-image: url("/img/goods/delivery.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+    @include mobile {
+        font-size: 12px;
+    }
+  }
+
+  &__list {
+    flex-grow: 1;
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba($dark, 0.04);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 54px 1fr min-content;
+    gap: 8px 12px;
+    grid-template-areas:
+      'image title title'
+      'image counter price';
+
+    &:last-child {
+      border-bottom-color: transparent;
+    }
+
+    &-title {
+      font-size: 14px;
+      font-weight: 400;
+      //grid-area: title;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    align-self: start;
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  &__counter {
+    grid-area: counter;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+
+    &-input {
+      padding: 0;
+      width: 22px;
+      border: none;
+      text-align: center;
+      background-color: transparent;
+      outline: 1px solid transparent;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+
+      &:focus-visible {
+        outline-color: $dark;
+      }
+    }
+
+    &-btn {
+      width: 29px;
+      height: 29px;
+      border-radius: 6px;
+      background-color: $bg;
+    }
+  }
+
+  &__price {
+    grid-area: price;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__order-btn {
+    @extend %btnStyles;
+    padding: 9px 16px 8px 16px;
+    transition: transform .2s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+}

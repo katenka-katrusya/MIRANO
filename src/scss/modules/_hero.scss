@@ -5,6 +5,14 @@
 .hero {
   padding: 60px 0;
 
+  @include tablet {
+    padding: 40px 0;
+  }
+
+  @include mobile {
+    padding: 40px 0 73px;
+  }
+
   &__head-group {
     margin-bottom: 24px;
     font-family: $second-family;
@@ -13,6 +21,14 @@
   &__title {
     @extend %sectionTitle;
     @include dynamicFontSize(80, 120, 1024, 1440);
+
+    @include laptop {
+      @include dynamicFontSize(58, 80, 768, 1024);
+    }
+
+    @include tablet {
+      @include dynamicFontSize(40, 58, 320, 768);
+    }
   }
 
   &__subtitle {
@@ -20,18 +36,27 @@
     @include dynamicFontSize(32, 40, 1024, 1440);
     text-align: right;
     color: $dark;
+
+    @include laptop {
+      @include dynamicFontSize(24, 32, 768, 1024);
+    }
+
+    @include tablet {
+      @include dynamicFontSize(28, 24, 320, 768);
+    }
   }
 
   &__group-image {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 26px;
+    gap: calc(24 / 1300 * 100%);
   }
 
   &__image {
-    object-fit: contain;
+    object-fit: cover;
     @include dynamicWidthImage(284, 1300);
+    aspect-ratio: 284 / 352;
 
     &_left {
       border-radius: 400px 400px 400px 0;
@@ -39,6 +64,7 @@
 
     &_center {
       @include dynamicWidthImage(680, 1300);
+      aspect-ratio: 680 / 588;
 
       //mask-image: url("/img/hero/mask.svg#mask0_10_18");
       //clip-path: path("M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z");

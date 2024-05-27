@@ -4,15 +4,45 @@
 .goods {
   padding: 60px 0;
 
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+  }
+
+  &__box {
+    flex-grow: 1;
+    max-width: 970px;
+  }
+
+  @include tablet {
+    padding: 40px 0;
+  }
+
   &__title {
     @extend %sectionTitle;
     margin-bottom: 40px;
+
+    @include laptop {
+      @include dynamicFontSize(32, 50, 768, 1024);
+    }
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
   }
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 310px);
+    grid-template-columns: repeat(auto-fit, 310px);
+    margin: 0 auto;
     justify-content: center;
     gap: 24px 20px;
+
+    @include mobile {
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      column-gap: 12px;
+    }
   }
 }

@@ -1,16 +1,5 @@
 @use "vars" as *;
 
-@mixin dynamicFontSize($minFontSize, $maxFontSize, $minScreen, $maxScreen) {
-  font-size: clamp(
-    #{$minFontSize}px,
-    calc(#{$minFontSize}px + (($maxFontSize - $minFontSize) * (100vw - #{$minScreen}px) / ($maxScreen - $minScreen))),
-    #{$maxFontSize}px);
-}
-
-@mixin dynamicWidthImage($widthImage, $widthContainer) {
-  width: calc(#{$widthImage} / #{$widthContainer} * 100%);
-}
-
 %sectionTitle {
   font-family: $second-family;
   font-size: 50px;
@@ -19,4 +8,46 @@
   text-transform: uppercase;
   text-align: center;
   color: $green;
+}
+
+%btnStyles {
+  border-radius: 32px;
+  padding: 8px 16px;
+  min-width: 120px;
+  background-color: #f0a35b;
+  color: #fff;
+}
+
+@mixin dynamicFontSize($minFontSize, $maxFontSize, $minScreen, $maxScreen) {
+  font-size: clamp(
+    #{$minFontSize}px,
+    calc(
+      #{$minFontSize}px
+      + (($maxFontSize - $minFontSize)
+      * (100vw - #{$minScreen}px)
+      / ($maxScreen - $minScreen))),
+    #{$maxFontSize}px);
+}
+
+@mixin dynamicWidthImage($widthImage, $widthContainer) {
+  width: calc(#{$widthImage} / #{$widthContainer} * 100%);
+}
+
+// media
+@mixin laptop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
 }
