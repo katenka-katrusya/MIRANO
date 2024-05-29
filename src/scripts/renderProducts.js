@@ -1,5 +1,5 @@
-import { ProductCard } from '@/scripts/ProductCard.jsx';
-import { store } from '@/scripts/Store.js';
+import { ProductCard } from './ProductCard.jsx';
+import { store } from './Store.js';
 
 export const renderProducts = async () => {
   const goodsList = document.querySelector('.goods__list');
@@ -7,10 +7,19 @@ export const renderProducts = async () => {
     const products = store.getProducts();
     goodsList.innerHTML = '';
 
-    products.forEach(product => {
-      const productCard = ProductCard(product);
-      goodsList.append(productCard);
+    if (!products.length) {
+      const messageItem = document.createElement('li');
+      messageItem.textContent = 'Товары не найдены';
+      messageItem.classList.add('goods__no-product');
+      goodsList.append(messageItem);
+      return;
+    }
+
+    const productCards = products.map((product) => {
+      return ProductCard(product);
     });
+
+    goodsList.append(...productCards);
   };
 
   store.subscribe(updList);

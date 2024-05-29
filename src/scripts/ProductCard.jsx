@@ -1,4 +1,4 @@
-import { API_URL } from '@/scripts/API.js';
+import { API_URL } from './API.js';
 
 export const ProductCard = (product) => (
   <li class="goods__item">
@@ -10,12 +10,16 @@ export const ProductCard = (product) => (
         <h3 class="card__title">{product.name}</h3>
         <div class="card__footer">
           <p class="card__date-delivery">сегодня в 14:00</p>
-          <button class="card__button">
-            <span class="card__price">{product.price}&nbsp;₽</span>
-            <span class="card__button-text">в&nbsp;корзину</span>
-          </button>
+          <button class="card__button"
+            onMouseEnter={(e) => {
+              e.target.textContent = 'В корзину';
+            }}
+            onMouseLeave={(e) => {
+              e.target.innerHTML = `${product.price}&nbsp;₽`;
+            }}
+          >{product.price}&nbsp;₽</button>
         </div>
       </div>
     </article>
   </li>
-)
+);

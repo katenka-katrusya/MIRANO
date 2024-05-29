@@ -1,0 +1,35 @@
+@use '../vars' as *;
+@use '../mixins' as *;
+
+.preload {
+  display: none;
+  position: absolute;
+  inset: 0;
+  padding-top: 200px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.4);
+
+  z-index: 999;
+
+  @include mobile {
+    padding-top: 100px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 5px solid $green;
+    border-top: 5px solid $light-orange;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,4 +1,4 @@
-import { store } from '@/scripts/Store.js';
+import { store } from './Store.js';
 
 export const API_URL = 'http://localhost:3000';
 

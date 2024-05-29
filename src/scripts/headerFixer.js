@@ -1,4 +1,4 @@
-import { debounce } from '@/scripts/debounce.js';
+import { debounce } from './debounce.js';
 
 export const initHeaderFixer = () => {
   // выезжающий header

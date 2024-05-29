@@ -1,5 +1,5 @@
 // центрирование выпадашек, открытие и закрытие
-import { debounce } from '@/scripts/debounce.js';
+import { debounce } from './debounce.js';
 
 const adjustElementPosition = (element, count = 0) => {
   const rect = element.getBoundingClientRect();

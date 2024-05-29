@@ -45,6 +45,7 @@
     background-position: left 16px center;
     background-color: $white;
     color: $dark;
+    transition: background-color 0.3s ease-in-out;
 
     @include mobile {
       padding: 10px 12px 10px 40px;
