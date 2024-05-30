@@ -18,7 +18,6 @@ export const filterProducts = () => {
     if (minPrice) params.minPrice = minPrice;
     if (maxPrice) params.maxPrice = maxPrice;
 
-    fetchProducts(params);
     callBackWithPreload(goodsSection, fetchProducts, params);
   }
 

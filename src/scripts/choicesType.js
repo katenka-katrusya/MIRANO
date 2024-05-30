@@ -1,4 +1,4 @@
-import { store } from './Store.js';
+import { productStore } from './Store.js';
 import { ListType } from './ListType.jsx';
 
 export const initChoicesType = () => {
@@ -6,7 +6,7 @@ export const initChoicesType = () => {
   const choicesBox = document.querySelector('.filter__choices-box_type');
 
   const updTypeChoicesVisibility = () => {
-    const categories = store.getCategories();
+    const categories = productStore.getCategories();
 
     if (categories.size) {
       typeChoices.style.display = '';
@@ -20,7 +20,7 @@ export const initChoicesType = () => {
   }
 
   //  подписываемся на изменения
-  store.subscribe(updTypeChoicesVisibility);
+  productStore.subscribe(updTypeChoicesVisibility);
 
   // один раз вызываем, чтобы показало сразу категории
   updTypeChoicesVisibility();

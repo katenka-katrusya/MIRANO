@@ -27,9 +27,11 @@
   }
 
   &__container {
+    display: flex;
     flex-direction: column;
     padding: 24px 16px;
-    max-width: 310px;
+    width: 310px;
+    max-width: 100%;
     min-height: 778px;
     border-radius: 32px;
     background-color: $white;
@@ -39,8 +41,8 @@
     //}
 
     @include mobile {
-      min-height: auto;
-      max-width: 292px;
+      min-height: 350px;
+      width: 292px;
     }
   }
 
@@ -167,5 +169,9 @@
         transform: scale(1.03);
       }
     }
+  }
+
+  &__no-product {
+    color: $orange;
   }
 }

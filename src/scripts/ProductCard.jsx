@@ -1,4 +1,5 @@
 import { API_URL } from './API.js';
+import { cartStore } from './Store.js';
 
 export const ProductCard = (product) => (
   <li class="goods__item">
@@ -17,7 +18,9 @@ export const ProductCard = (product) => (
             onMouseLeave={(e) => {
               e.target.innerHTML = `${product.price}&nbsp;₽`;
             }}
-          >{product.price}&nbsp;₽</button>
+            onClick={() => cartStore.addProductCart(product.id)}>
+            {product.price}&nbsp;₽
+          </button>
         </div>
       </div>
     </article>

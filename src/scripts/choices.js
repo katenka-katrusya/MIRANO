@@ -33,6 +33,7 @@ export const initChoices = () => {
   choices.forEach((choice) => {
     const btn = choice.querySelector('.choices__btn');
     const box = choice.querySelector('.choices__box');
+    const filterSelect = choice.querySelector('.filter__select');
 
     // закрытие выпадашки при клике за пределами
     const closeAllChoices = ({target}) => {
@@ -40,6 +41,7 @@ export const initChoices = () => {
 
       if (!clickInside) {
         box.classList.remove('choices__box_open');
+        filterSelect.classList.remove('flipped');
         // очищаем обработчик, чтобы постоянно не работал при клике вне блока
         document.removeEventListener('click', closeAllChoices);
       }
@@ -47,12 +49,16 @@ export const initChoices = () => {
 
     btn.addEventListener('click', () => {
       box.classList.toggle('choices__box_open');
+      filterSelect.classList.toggle('flipped');
 
       choices.forEach((item) => {
         if ((item !== choice)) {
           item
             .querySelector('.choices__box')
             .classList.remove('choices__box_open');
+          item
+            .querySelector('.filter__select')
+            .classList.remove('flipped');
         }
       });
 

@@ -1,10 +1,10 @@
 import { ProductCard } from './ProductCard.jsx';
-import { store } from './Store.js';
+import { productStore } from './Store.js';
 
 export const renderProducts = async () => {
   const goodsList = document.querySelector('.goods__list');
   const updList = () => {
-    const products = store.getProducts();
+    const products = productStore.getProducts();
     goodsList.innerHTML = '';
 
     if (!products.length) {
@@ -22,6 +22,6 @@ export const renderProducts = async () => {
     goodsList.append(...productCards);
   };
 
-  store.subscribe(updList);
+  productStore.subscribe(updList);
   updList();
 };
