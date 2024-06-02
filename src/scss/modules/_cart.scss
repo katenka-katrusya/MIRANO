@@ -162,12 +162,19 @@
   &__order-btn {
     @extend %btnStyles;
     padding: 9px 16px 8px 16px;
-    transition: transform .2s ease-in-out;
+    transition-property: background-color, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
 
     @media (hover: hover) {
       &:hover {
-        transform: scale(1.03);
+        transform: scale(1.02);
       }
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      pointer-events: none;
     }
   }
 

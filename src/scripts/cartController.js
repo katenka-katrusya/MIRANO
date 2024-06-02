@@ -6,6 +6,7 @@ const cart = document.querySelector('.cart');
 const cartOpenBtn = document.querySelector('.header__cart-button');
 const cartClose = document.querySelector('.cart__close');
 const goodsSection = document.querySelector('.goods');
+const cartPriceTotal = document.querySelector('.cart__price_total');
 
 const toggleCart = () => {
   cart.classList.toggle('cart_open');
@@ -23,9 +24,17 @@ export const initCart = async () => {
   renderCart();
 
   cartStore.subscribe(() => {
-    cartOpenBtn.textContent = cartStore.getCart().length;
+    const cart = cartStore.getCart();
+    cartOpenBtn.textContent = cart.length;
+
+    const totalPriceValue = cart.reduce(
+      (acc, product) => acc + product.price * product.quantity,
+      0);
+    cartPriceTotal.innerHTML = `${totalPriceValue}&nbsp;₽`;
   });
+
   cartOpenBtn.addEventListener('click', toggleCart);
+
   cartClose.addEventListener('click', () => {
     cart.classList.remove('cart_open');
   });

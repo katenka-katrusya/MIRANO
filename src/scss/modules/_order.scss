@@ -1,0 +1,241 @@
+@use '../vars' as *;
+@use '../mixins' as *;
+
+.order {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  padding: 20px 9px;
+  background-color: rgba($dark, 0.5);
+  z-index: 999;
+
+  &__wrapper {
+    position: relative;
+    padding: 60px 32px;
+    margin: auto;
+    max-width: 624px;
+    border-radius: 32px;
+    background-color: $white;
+
+    @include mobile {
+      padding: 32px 16px;
+      border-radius: 20px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__legend {
+    font-size: 18px;
+    margin-bottom: 12px;
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+
+  &__label {
+    width: calc(50% - 6px);
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &_min {
+      width: calc(25% - 8.42px);
+
+      @include mobile {
+        width: calc(50% - 4px);
+      }
+    }
+  }
+
+  &__input {
+    padding: 8px 16px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: $bg;
+    transition-property: background-color, border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+
+    &::placeholder {
+      color: rgba($dark, 0.3);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: $light-orange;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $pattern;
+      }
+    }
+  }
+
+  &__payment {
+    margin-bottom: 12px;
+  }
+
+  &__label-radio {
+    position: relative;
+    display: block;
+    padding-left: 28px;
+  }
+
+  &__radio {
+    position: absolute;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      display: block;
+      border-radius: 50%;
+      border: 1px solid $orange;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $orange;
+      opacity: 0;
+    }
+
+    &:checked::after {
+      opacity: 1;
+    }
+  }
+
+  &__delivery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__select-wrapper {
+    position: relative;
+    width: min-content;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      display: block;
+      width: 8px;
+      height: 8px;
+      transform: translateY(-50%);
+      background-image: url("/img/arrow-down.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      pointer-events: none;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &_active::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  &__select {
+    padding: 8px 40px 8px 16px;
+    width: 190px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: $bg;
+    appearance: none;
+
+    &:focus-visible {
+      outline: none;
+      border-color: $light-orange;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    @extend %btnStyles;
+    max-width: 274px;
+    width: 100%;
+    transition-property: background-color, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+
+    @include mobile {
+      min-width: 169px;
+      max-width: min-content;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 36px;
+    color: $orange;
+  }
+}

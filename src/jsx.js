@@ -1,4 +1,5 @@
 export default function jsx(tag, attributes = {}, ...children) {
+  attributes = attributes || {};
 
   if (typeof tag === 'function') {
     return tag(attributes, ...children);

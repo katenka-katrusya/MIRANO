@@ -13,9 +13,31 @@
 %btnStyles {
   border-radius: 32px;
   padding: 8px 16px;
-  min-width: 120px;
-  background-color: #f0a35b;
-  color: #fff;
+  max-width: 122px;
+  width: 100%;
+  border: 1px solid transparent;
+  background-color: $light-orange;
+  color: $white;
+  transition-property: background-color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+
+  &:focus-visible {
+    outline: transparent;
+    border-color: $light-orange;
+    background-color: $orange;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+     border-color: $orange;
+     background-color: $orange;
+    }
+  }
+
+  &:active {
+    background-color: $orange;
+  }
 }
 
 @mixin dynamicFontSize($minFontSize, $maxFontSize, $minScreen, $maxScreen) {

@@ -1,11 +1,12 @@
 import '@/scss/index.scss';
 import { initHeaderFixer } from '@/scripts/headerFixer.js';
-import { initChoices } from '@/scripts/choices.js';
-import { initCart } from '@/scripts/cart.js';
+import { initChoices } from '@/scripts/choicesController.js';
+import { initCart } from '@/scripts/cartController.js';
 import { renderProducts } from '@/scripts/renderProducts.js';
 import { initChoicesType } from '@/scripts/choicesType.js';
 import { filterProducts } from '@/scripts/filterProducts.js';
 import { initSearchProducts } from '@/scripts/searchProducts.js';
+import { initOrder } from '@/scripts/orderController.js';
 
 const init = () => {
   initHeaderFixer();
@@ -15,6 +16,7 @@ const init = () => {
   initSearchProducts();
   renderProducts();
   filterProducts();
+  initOrder();
 };
 
 document.addEventListener('DOMContentLoaded', init);
