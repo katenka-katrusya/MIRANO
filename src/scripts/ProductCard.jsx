@@ -10,7 +10,7 @@ export const ProductCard = (product) => (
       <div class="card__content">
         <h3 class="card__title">{product.name}</h3>
         <div class="card__footer">
-          <p class="card__date-delivery">сегодня в 14:00</p>
+          <p class="card__date-delivery">завтра с 9:00</p>
           <button class="card__button"
             onMouseEnter={(e) => {
               e.target.textContent = 'В корзину';
