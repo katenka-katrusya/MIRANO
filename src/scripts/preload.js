@@ -1,4 +1,4 @@
-export const callBackWithPreload = async (elem, cb, ...params) => {
+export const callBackWithPreload = async function (elem, cb, ...params) {
   const preload = document.createElement('div');
 
   preload.classList.add('preload');
@@ -15,4 +15,4 @@ export const callBackWithPreload = async (elem, cb, ...params) => {
     preload.remove();
     elem.style.position = '';
   }
-}
+};

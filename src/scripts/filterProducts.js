@@ -1,6 +1,6 @@
-import { fetchProducts } from './API.js';
 import { debounce } from './debounce.js';
-import { callBackWithPreload } from '@/scripts/preload.js';
+import { callBackWithPreload } from './preload.js';
+import { productStore } from './Store.js';
 
 export const filterProducts = () => {
   const filterForm = document.querySelector('.filter__form');
@@ -18,7 +18,7 @@ export const filterProducts = () => {
     if (minPrice) params.minPrice = minPrice;
     if (maxPrice) params.maxPrice = maxPrice;
 
-    callBackWithPreload(goodsSection, fetchProducts, params);
+    callBackWithPreload(goodsSection, productStore.fetchProducts(), params);
   }
 
   applyFilters();

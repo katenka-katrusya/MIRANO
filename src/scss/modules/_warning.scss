@@ -1,0 +1,33 @@
+@use '../mixins' as *;
+@use '../vars' as *;
+
+.warning {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: $orange;
+  background-color: $white;
+
+  @include mobile {
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+
+  &__text {
+    margin-right: auto;
+  }
+
+  &__apply {
+    @extend %btnStyles;
+    margin-right: 30px;
+
+    @include mobile {
+        margin-right: auto;
+    }
+  }
+}

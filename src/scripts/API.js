@@ -1,6 +1,5 @@
 import { productStore } from './Store.js';
 
-// export const API_URL = 'https://mirano-api-fn9j.onrender.com';
 export const API_URL = 'https://prairie-instinctive-washer.glitch.me';
 
 const formatQueryString = (params) => {
@@ -19,7 +18,9 @@ const formatQueryString = (params) => {
 
 export const fetchProducts = async (params = {}) => {
   try {
-    const response = await fetch(`${API_URL}/api/products${formatQueryString(params)}`);
+    const response = await fetch(
+      `${API_URL}/api/products${formatQueryString(params)}`
+    );
 
     if(!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -27,13 +28,14 @@ export const fetchProducts = async (params = {}) => {
 
     const products = await response.json();
 
-    productStore.setProducts(products);
+    return products;
   } catch (error) {
     console.error(`Ошибка при получении данных: ${error}`);
-
     return [];
   }
 };
+
+// console.log(fetchProducts());
 
 export const sendOrder = async (orderData) => {
   try {
