@@ -12,7 +12,7 @@ export const checkCookies = () => {
 
     const applyButton = warningElement.querySelector('.warning__apply');
     applyButton.addEventListener('click', () => {
-      setCookie("cookieConsent", "true", 365);
+      // setCookie("cookieConsent", "true", 365);
       warningElement.remove();
     });
   }
