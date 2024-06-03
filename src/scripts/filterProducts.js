@@ -21,7 +21,7 @@ export const filterProducts = () => {
     callBackWithPreload(goodsSection, productStore.fetchProducts(), params);
   }
 
-  applyFilters();
+  console.log(applyFilters());
 
   const applyPriceFilters = debounce(applyFilters, 500);
 

@@ -15,8 +15,8 @@ export const checkCookies = () => {
 
     applyButton.addEventListener('click', () => {
       setCookie("cookieConsent", "true", 365);
-      setCookie("trackerConsent", "true", 365);
       warningElement.remove();
     });
   }
 };
+

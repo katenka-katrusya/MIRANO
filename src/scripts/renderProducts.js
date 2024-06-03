@@ -4,7 +4,7 @@ import { productStore } from './Store.js';
 export const renderProducts = async () => {
   const goodsList = document.querySelector('.goods__list');
   const updList = () => {
-    const products = productStore.getProducts();
+    const products = productStore.products;
     goodsList.innerHTML = '';
 
     if (!products.length && !productStore.loading) {

@@ -20,9 +20,9 @@ class Store {
 class ProductStore extends Store {
   constructor() {
     super();
-    this.products = [];
+    this._products = [];
     this.categories = new Set();
-    this.loading = false;
+    this._loading = false;
     this.error = null;
   }
 
@@ -44,8 +44,8 @@ class ProductStore extends Store {
     }
   }
 
-  getProducts() {
-    return this.products;
+  get products() {
+    return this._products;
   }
 
   get loading() {
@@ -58,8 +58,8 @@ class ProductStore extends Store {
   }
 
   // обновляем продукты
-  setProducts(newProducts) {
-    this.products = newProducts;
+  set products(newProducts) {
+    this._products = newProducts;
     this.updCategories(newProducts);
     // вызываем функцию, оповещающую всех наблюдателей, что произошли изменения
     this.notifyObservers();

@@ -14,7 +14,6 @@ export const Order = (totalPriceValue) => {
   const day = String(date.getDate()).padStart(2, '0');
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const deliveryDate = `${day}.${month}`;
-  // const deliveryDate = `${date.getDate()}.${date.getMonth() + 1}`
 
   return (
     <div class="order">

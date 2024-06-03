@@ -1,5 +1,6 @@
 import { API_URL } from './API.js';
 import { cartStore } from './Store.js';
+import { debounce } from '@/scripts/debounce.js';
 
 export const CartElem = (product) => (
   <li class="cart__item">
@@ -17,14 +18,29 @@ export const CartElem = (product) => (
         -
       </button>
       <label class="cart__counter-label" aria-label="Количество товара">
-        <input class="cart__counter-input" type="text" max="99" min="0" value={product.quantity}/>
+        <input class="cart__counter-input"
+               type="text"
+               max="99"
+               min="0"
+               value={product.quantity}
+               onInput={debounce(({ target }) => {
+                 cartStore.postCart({
+                   id: product.id,
+                   quantity: !isNaN(parseInt(target.value))
+                             ? parseInt(target.value)
+                             : product.quantity,
+                 })
+               }, 500)}
+        />
       </label>
       <button class="cart__counter-btn"
               onClick={() => {
                 cartStore.postCart({
-                  id: product.id, quantity: product.quantity + 1
+                  id: product.id,
+                  quantity: product.quantity + 1,
                 });
-              }}>
+              }}
+      >
         +
       </button>
     </div>
