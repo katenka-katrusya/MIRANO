@@ -6,13 +6,16 @@ const setCookie = (name, value, days) => {
 }
 
 export const checkCookies = () => {
+
   if (!document.cookie) {
     const warningElement = warningCookies();
-    document.body.appendChild(warningElement);
+    document.body.append(warningElement);
 
     const applyButton = warningElement.querySelector('.warning__apply');
+
     applyButton.addEventListener('click', () => {
-      // setCookie("cookieConsent", "true", 365);
+      setCookie("cookieConsent", "true", 365);
+      setCookie("trackerConsent", "true", 365);
       warningElement.remove();
     });
   }

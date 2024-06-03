@@ -119,7 +119,7 @@ class CartStore extends Store {
     try {
       const response = await fetch(`${API_URL}/api/cart`, {
         method: 'GET',
-        credentials: 'include', // передача куков
+        credentials: 'include', // передача куки
       });
 
       if (!response.ok) {
