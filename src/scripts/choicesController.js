@@ -1,5 +1,6 @@
 // центрирование выпадашек, открытие и закрытие
 import { debounce } from './debounce.js';
+import { productStore } from '@/scripts/Store.js';
 
 const adjustElementPosition = (element, count = 0) => {
   const rect = element.getBoundingClientRect();
@@ -75,5 +76,7 @@ export const initChoices = () => {
     window.addEventListener('resize', debounce(() => {
       adjustElementPosition(box);
     }));
+
+    productStore.subscribe(() => adjustElementPosition(box));
   });
 };

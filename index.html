@@ -47,9 +47,18 @@
         </div>
         
         <figure class="hero__group-image">
-          <img class="hero__image hero__image_left" src="/img/hero/hero-left.jpg"
-               alt="букет цветов в банке. В букете красно-оранжевые розы, оранжевые тюльпаны, зелёные листья">
-          <svg class="hero__image hero__image_center" role="img"
+          <picture class="hero__image hero__image_left">
+            <source
+              srcset="/img/hero/hero-left@1x.avif 1x, /img/hero/hero-left@2x.avif 2x"
+              type="image/avif">
+            <source
+              srcset="/img/hero/hero-left@1x.webp 1x, /img/hero/hero-left@2x.webp 2x"
+              type="image/webp">
+            <img src="/img/hero/hero-left@1x.jpg" srcset="/img/hero/hero-left@2x.jpg 2x"
+                 alt="букет цветов в банке. В букете красно-оранжевые розы, оранжевые тюльпаны, зелёные листья">
+          </picture>
+          
+            <svg class="hero__image hero__image_center" role="img"
                aria-label="букет цветов в белой вазе из нежных розовых роз, хризантем и зелёных листьев"
                xmlns="http://www.w3.org/2000/svg"
                id="hero-img" width="680" height="588"
@@ -58,11 +67,22 @@
               <path
                 d="M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z"/>
             </clipPath>
-            <image width="100%" height="100%" xlink:href="/img/hero/hero.jpg" clip-path="url(#hero)"
-                   preserveAspectRatio="xMidYMid slice"/>
+            
+            <foreignobject height="100%" width="100%" clip-path="url(#hero)">
+              <div class="hero__image-center"></div>
+            </foreignobject>
           </svg>
-          <img class="hero__image hero__image_right" src="/img/hero/hero-right.jpg"
-               alt="букет цветов в круглой светлой коробке">
+          
+          <picture class="hero__image hero__image_right" >
+            <source
+              srcset="/img/hero/hero-right@1x.avif 1x, /img/hero/hero-right@2x.avif 2x"
+              type="image/avif">
+            <source
+              srcset="/img/hero/hero-right@1x.webp 1x, /img/hero/hero-right@2x.webp 2x"
+              type="image/webp">
+            <img src="/img/hero/hero-right@1x.jpg" srcset="/img/hero/hero-right@2x.jpg 2x"
+                 alt="букет цветов в круглой светлой коробке">
+          </picture>
         </figure>
       </div>
     </section>
