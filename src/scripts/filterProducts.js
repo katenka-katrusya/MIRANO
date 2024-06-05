@@ -26,7 +26,6 @@ export const filterProducts = () => {
 
   const applyPriceFilters = debounce(applyFilters, 500);
 
-
   filterForm.addEventListener('input', (e) => {
     const target = e.target;
 
