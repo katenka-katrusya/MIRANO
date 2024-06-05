@@ -30,7 +30,7 @@ export const Order = (totalPriceValue) => {
                 <input class="order__input" type="text" name="name-buyer" placeholder="Имя"/>
               </label>
               <label class="order__label" aria-label="Телефон">
-                <input class="order__input" type="text" name="phone-buyer" placeholder="Телефон"/>
+                <input class="order__input" type="number" name="phone-buyer" placeholder="Телефон"/>
               </label>
             </div>
           </fieldset>
@@ -42,7 +42,7 @@ export const Order = (totalPriceValue) => {
                 <input class="order__input" type="text" name="name-recipient" placeholder="Имя"/>
               </label>
               <label class="order__label" aria-label="Телефон">
-                <input class="order__input" type="text" name="phone-recipient" placeholder="Телефон"/>
+                <input class="order__input" type="number" name="phone-recipient" placeholder="Телефон"/>
               </label>
             </div>
           </fieldset>
