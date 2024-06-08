@@ -1,3 +1,5 @@
+import { checkForm } from '@/scripts/validate.js';
+
 const openSelect = () => {
   const selectWrapper = document.querySelector('.order__select-wrapper');
   selectWrapper.classList.add('order__select-wrapper_active');
@@ -21,7 +23,7 @@ export const Order = (totalPriceValue) => {
         <h2 class="order__title">Оформить заказ</h2>
         <button class="order__close" type="button">&times;</button>
 
-        <form class="order__form" id="order">
+        <form class="order__form" action={"https://prairie-instinctive-washer.glitch.me"} id="order">
 
           <fieldset class="order__fieldset">
             <legend class="order__legend">Данные заказчика</legend>
