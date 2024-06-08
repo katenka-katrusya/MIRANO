@@ -128,6 +128,11 @@ export const checkFormContacts = (form) => {
       {
         rule: 'email',
         errorMessage: 'Недопустимый формат почты',
+      },
+      {
+        rule: 'minLength',
+        value: 5,
+        errorMessage: 'Невалидная почта',
       }
     ])
 
