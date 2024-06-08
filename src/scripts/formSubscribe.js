@@ -8,10 +8,11 @@ export const initFormSubscribe = () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const input = document.querySelector('.subscribe__input').value.trim();
     const isValid = await validator.revalidate();
     div.remove();
 
-    if (isValid) {
+    if (isValid && input) {
       div.classList.add('success-subscribe');
       div.textContent = 'Вы подписались на рассылку';
       form.append(div);
