@@ -120,4 +120,18 @@ export const checkForm = (form) => {
   return validate;
 }
 
+export const checkFormContacts = (form) => {
+  const validate = new JustValidate(form);
+
+  validate
+    .addField('.subscribe__input', [
+      {
+        rule: 'email',
+        errorMessage: 'Недопустимый формат почты',
+      }
+    ])
+
+  return validate;
+}
+
 

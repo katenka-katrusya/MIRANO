@@ -8,6 +8,7 @@ import { filterProducts } from '@/scripts/filterProducts.js';
 import { initSearchProducts } from '@/scripts/searchProducts.js';
 import { initOrder } from '@/scripts/orderController.js';
 import { checkCookies } from '@/scripts/checkCookies.js';
+import { initFormSubscribe } from '@/scripts/formSubscribe.js';
 
 const init = () => {
   initHeaderFixer();
@@ -19,6 +20,7 @@ const init = () => {
   filterProducts();
   initOrder();
   checkCookies();
+  initFormSubscribe();
 };
 
 document.addEventListener('DOMContentLoaded', init);
