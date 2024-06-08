@@ -17,7 +17,7 @@ export const initFormSubscribe = () => {
       form.reset();
     } else {
       const div = document.querySelector('.success-subscribe');
-      div.remove();
+      div ? div.remove() : '';
     }
   });
 }
